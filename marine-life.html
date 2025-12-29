@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOCALS MARINE | Marine Life</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+      <!-- Video HTML - body ke start mein ya end mein add karein -->
+<div id="video-background">
+  <video autoplay muted loop playsinline id="bg-video">
+    <!-- Apna video URL yahaan dalen -->
+    <source src="/Videos/video4.mp4" type="video/mp4">
+    <!-- Alternative sources agar needed ho -->
+    <source src="apna-video.webm" type="video/webm">
+    Your browser does not support HTML5 video.
+  </video>
+  <div class="video-overlay"></div>
+</div>
+
+
+
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/aqua-logo.jpg" alt="Marine World Logo" height="50">
+                <span class="ms-2">LOCALS MARINE</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="marine-life.html">Marine Life</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+                    <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="container mt-5 pt-4">
+        <div class="text-center mb-5">
+            <h1 style="color: black; background-color: rgb(255, 255, 255); padding: 10px; border-radius: 8px;"class="display-4"><i class="fas fa-fish"></i> Marine Life</h1>
+            <p class="lead">Explore the fascinating world of marine creatures</p>
+        </div>
+
+        <!-- FILTER BUTTONS -->
+        <div class="mb-4">
+            <h3 class="mb-3">Browse by Category</h3>
+            <div class="d-flex flex-wrap gap-2 mb-4" id="filterButtons">
+                <button class="btn btn-outline-primary filter-btn active" data-filter="all">All Species</button>
+                <button class="btn btn-outline-success filter-btn" data-filter="fish">Fish</button>
+                <button class="btn btn-outline-info filter-btn" data-filter="mammal">Mammals</button>
+                <button class="btn btn-outline-warning filter-btn" data-filter="reptile">Reptiles</button>
+                <button class="btn btn-outline-danger filter-btn" data-filter="invertebrate">Invertebrates</button>
+                <button class="btn btn-outline-secondary filter-btn" data-filter="coral">Corals</button>
+            </div>
+        </div>
+
+        <!-- SPECIES CARDS GRID - 12 SPECIES -->
+        <section class="mb-5">
+            <h2 class="border-bottom pb-2 mb-4">Featured Marine Species (12 Total)</h2>
+            <div class="row g-4" id="speciesGrid">
+                
+                <!-- Species 1: Dolphin -->
+                <div class="col-lg-4 col-md-6 species-item" data-category="mammal">
+                    <div class="card species-card h-100">
+                        <span class="badge bg-info category-badge">Mammal</span>
+                        <img src="images/img5.jpg" class="card-img-top species-img" alt="Bottlenose Dolphin">
+                        <div class="card-body">
+                            <h5 class="card-title">Bottlenose Dolphin</h5>
+                            <p class="card-text"><strong>Scientific Name:</strong> <em>Tursiops truncatus</em></p>
+                            <p class="card-text">Highly intelligent marine mammals known for their playful behavior and complex social structures.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary">Length: 2-4m</span>
+                                <span class="badge bg-success">Weight: 150-650kg</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Species 2: Clownfish -->
+                <div class="col-lg-4 col-md-6 species-item" data-category="fish">
+                    <div class="card species-card h-100">
+                        <span class="badge bg-success category-badge">Fish</span>
+                        <img src="images/img10.jpg" class="card-img-top species-img" alt="Clownfish">
+                        <div class="card-body">
+                            <h5 class="card-title">Clownfish</h5>
+                            <p class="card-text"><strong>Scientific Name:</strong> <em>Amphiprioninae</em></p>
+                            <p class="card-text">Colorful reef fish famous for their symbiotic relationship with sea anemones.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary">Length: 10-18cm</span>
+                                <span class="badge bg-success">Lifespan: 6-10 years</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Species 3: Sea Turtle -->
+                <div class="col-lg-4 col-md-6 species-item" data-category="reptile">
+                    <div class="card species-card h-100">
+                        <span class="badge bg-warning category-badge">Reptile</span>
+                        <img src="images/img7.jpg" class="card-img-top species-img" alt="Green Sea Turtle">
+                        <div class="card-body">
+                            <h5 class="card-title">Green Sea Turtle</h5>
+                            <p class="card-text"><strong>Scientific Name:</strong> <em>Chelonia mydas</em></p>
+                            <p class="card-text">Ancient mariners that travel thousands of miles between feeding and nesting grounds.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary">Length: 1-1.5m</span>
+                                <span class="badge bg-success">Weight: 65-130kg</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Species 4: Octopus -->
+                <div class="col-lg-4 col-md-6 species-item" data-category="invertebrate">
+                    <div class="card species-card h-100">
+                        <span class="badge bg-danger category-badge">Invertebrate</span>
+                        <img src="images/img9.jpg" class="card-img-top species-img" alt="Octopus">
+                        <div class="card-body">
+                            <h5 class="card-title">Common Octopus</h5>
+                            <p class="card-text"><strong>Scientific Name:</strong> <em>Octopus vulgaris</em></p>
+                            <p class="card-text">Highly intelligent cephalopod known for problem-solving abilities and camouflage skills.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary">Arm Span: 1m</span>
+                                <span class="badge bg-success">Lifespan: 1-2 years</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Species 5: Shark -->
+                <div class="col-lg-4 col-md-6 species-item" data-category="fish">
+                    <div class="card species-card h-100">
+                        <span class="badge bg-success category-badge">Fish</span>
+                        <img src="images/img6.jpg" class="card-img-top species-img" alt="Reef Shark">
+                        <div class="card-body">
+                            <h5 class="card-title">Blacktip Reef Shark</h5>
+                            <p class="card-text"><strong>Scientific Name:</strong> <em>Carcharhinus melanopterus</em></p>
+                            <p class="card-text">Small shark species commonly found in shallow coral reef environments.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary">Length: 1.6m</span>
+                                <span class="badge bg-success">Weight: 13kg</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Species 6: Coral -->
+                <div class="col-lg-4 col-md-6 species-item" data-category="coral">
+                    <div class="card species-card h-100">
+                        <span class="badge bg-secondary category-badge">Coral</span>
+                        <img src="images/img8.jpg" class="card-img-top species-img" alt="Brain Coral">
+                        <div class="card-body">
+                            <h5 class="card-title">Brain Coral</h5>
+                            <p class="card-text"><strong>Scientific Name:</strong> <em>Diploria labyrinthiformis</em></p>
+                            <p class="card-text">Stony coral with grooved surface resembling a brain, forming important reef structures.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary">Growth: 1cm/year</span>
+                                <span class="badge bg-success">Depth: 1-30m</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Species 7: Jellyfish (FIXED - WITH IMG TAG) -->
+                <div class="col-lg-4 col-md-6 species-item" data-category="invertebrate">
+                    <div class="card species-card h-100">
+                        <span class="badge bg-danger category-badge">Invertebrate</span>
+                        <img src="images/img19.jpg" class="card-img-top species-img" alt="Moon Jellyfish">
+                        <div class="card-body">
+                            <h5 class="card-title">Moon Jellyfish</h5>
+                            <p class="card-text"><strong>Scientific Name:</strong> <em>Aurelia aurita</em></p>
+                            <p class="card-text">Translucent jellyfish with delicate tentacles, often seen in coastal waters worldwide.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary">Diameter: 25-40cm</span>
+                                <span class="badge bg-success">Lifespan: 1 year</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Species 8: Sea Lion (FIXED - WITH IMG TAG) -->
+                <div class="col-lg-4 col-md-6 species-item" data-category="mammal">
+                    <div class="card species-card h-100">
+                        <span class="badge bg-info category-badge">Mammal</span>
+                        <img src="images/img20.jpg" class="card-img-top species-img" alt="California Sea Lion">
+                        <div class="card-body">
+                            <h5 class="card-title">California Sea Lion</h5>
+                            <p class="card-text"><strong>Scientific Name:</strong> <em>Zalophus californianus</em></p>
+                            <p class="card-text">Eared seals known for their intelligence, playfulness, and loud barking calls.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary">Length: 2-2.5m</span>
+                                <span class="badge bg-success">Weight: 200-400kg</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Species 9: Seahorse (FIXED - WITH IMG TAG) -->
+                <div class="col-lg-4 col-md-6 species-item" data-category="fish">
+                    <div class="card species-card h-100">
+                        <span class="badge bg-success category-badge">Fish</span>
+                        <img src="images/img15.jpg" class="card-img-top species-img" alt="Seahorse">
+                        <div class="card-body">
+                            <h5 class="card-title">Seahorse</h5>
+                            <p class="card-text"><strong>Scientific Name:</strong> <em>Hippocampus</em></p>
+                            <p class="card-text">Unique fish with horse-like head, prehensile tail, and male pregnancy.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary">Length: 1.5-35cm</span>
+                                <span class="badge bg-success">Lifespan: 1-5 years</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Species 10: Stingray (FIXED - WITH IMG TAG) -->
+                <div class="col-lg-4 col-md-6 species-item" data-category="fish">
+                    <div class="card species-card h-100">
+                        <span class="badge bg-success category-badge">Fish</span>
+                        <img src="images/img18.jpg" class="card-img-top species-img" alt="Blue Spotted Stingray">
+                        <div class="card-body">
+                            <h5 class="card-title">Blue Spotted Stingray</h5>
+                            <p class="card-text"><strong>Scientific Name:</strong> <em>Taeniura lymma</em></p>
+                            <p class="card-text">Colorful stingray with bright blue spots, found in shallow tropical waters.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary">Width: 35cm</span>
+                                <span class="badge bg-success">Diet: Carnivore</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Species 11: Penguin (FIXED - WITH IMG TAG) -->
+                <div class="col-lg-4 col-md-6 species-item" data-category="bird">
+                    <div class="card species-card h-100">
+                        <span class="badge bg-warning category-badge">Bird</span>
+                        <img src="images/img17.jpg" class="card-img-top species-img" alt="Gentoo Penguin">
+                        <div class="card-body">
+                            <h5 class="card-title">Gentoo Penguin</h5>
+                            <p class="card-text"><strong>Scientific Name:</strong> <em>Pygoscelis papua</em></p>
+                            <p class="card-text">Fastest swimming penguin species with distinctive white head patches.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary">Height: 51-90cm</span>
+                                <span class="badge bg-success">Weight: 5-8.5kg</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Species 12: Starfish (FIXED - WITH IMG TAG) -->
+                <div class="col-lg-4 col-md-6 species-item" data-category="invertebrate">
+                    <div class="card species-card h-100">
+                        <span class="badge bg-danger category-badge">Invertebrate</span>
+                        <img src="images/img16.jpg" class="card-img-top species-img" alt="Crown-of-Thorns Starfish">
+                        <div class="card-body">
+                            <h5 class="card-title">Crown-of-Thorns Starfish</h5>
+                            <p class="card-text"><strong>Scientific Name:</strong> <em>Acanthaster planci</em></p>
+                            <p class="card-text">Large starfish with venomous spines, known for feeding on coral polyps.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary">Diameter: 25-35cm</span>
+                                <span class="badge bg-success">Arms: 12-19</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- MARINE ANIMALS TABLE -->
+        <section class="mb-5">
+            <h2 class="border-bottom pb-2 mb-4">Marine Species Database</h2>
+            <p class="text- mb-3">Comprehensive information about marine animals in tabular format</p>
+            
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Common Name</th>
+                            <th>Scientific Name</th>
+                            <th>Category</th>
+                            <th>Habitat</th>
+                            <th>Diet</th>
+                            <th>Size</th>
+                            <th>Conservation Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bottlenose Dolphin</td>
+                            <td><em>Tursiops truncatus</em></td>
+                            <td><span class="badge bg-info">Mammal</span></td>
+                            <td>Coastal waters, bays</td>
+                            <td>Carnivore (fish, squid)</td>
+                            <td>2-4 meters</td>
+                            <td><span class="badge bg-success">Least Concern</span></td>
+                        </tr>
+                        <tr>
+                            <td>Clownfish</td>
+                            <td><em>Amphiprioninae</em></td>
+                            <td><span class="badge bg-success">Fish</span></td>
+                            <td>Coral reefs</td>
+                            <td>Omnivore (algae, plankton)</td>
+                            <td>10-18 cm</td>
+                            <td><span class="badge bg-success">Least Concern</span></td>
+                        </tr>
+                        <tr>
+                            <td>Green Sea Turtle</td>
+                            <td><em>Chelonia mydas</em></td>
+                            <td><span class="badge bg-warning">Reptile</span></td>
+                            <td>Coastal waters, lagoons</td>
+                            <td>Herbivore (seagrass, algae)</td>
+                            <td>1-1.5 meters</td>
+                            <td><span class="badge bg-danger">Endangered</span></td>
+                        </tr>
+                        <tr>
+                            <td>Common Octopus</td>
+                            <td><em>Octopus vulgaris</em></td>
+                            <td><span class="badge bg-danger">Invertebrate</span></td>
+                            <td>Rocky substrates</td>
+                            <td>Carnivore (crabs, mollusks)</td>
+                            <td>Arm span: 1m</td>
+                            <td><span class="badge bg-success">Least Concern</span></td>
+                        </tr>
+                        <tr>
+                            <td>Blacktip Reef Shark</td>
+                            <td><em>Carcharhinus melanopterus</em></td>
+                            <td><span class="badge bg-success">Fish</span></td>
+                            <td>Coral reefs, lagoons</td>
+                            <td>Carnivore (fish, crustaceans)</td>
+                            <td>1.6 meters</td>
+                            <td><span class="badge bg-warning">Near Threatened</span></td>
+                        </tr>
+                        <tr>
+                            <td>Brain Coral</td>
+                            <td><em>Diploria labyrinthiformis</em></td>
+                            <td><span class="badge bg-secondary">Coral</span></td>
+                            <td>Shallow reefs</td>
+                            <td>Filter feeder (plankton)</td>
+                            <td>Colonies: 1-2m</td>
+                            <td><span class="badge bg-warning">Near Threatened</span></td>
+                        </tr>
+                        <tr>
+                            <td>Moon Jellyfish</td>
+                            <td><em>Aurelia aurita</em></td>
+                            <td><span class="badge bg-danger">Invertebrate</span></td>
+                            <td>Coastal waters worldwide</td>
+                            <td>Plankton, small fish</td>
+                            <td>25-40 cm diameter</td>
+                            <td><span class="badge bg-success">Least Concern</span></td>
+                        </tr>
+                        <tr>
+                            <td>California Sea Lion</td>
+                            <td><em>Zalophus californianus</em></td>
+                            <td><span class="badge bg-info">Mammal</span></td>
+                            <td>Coastal waters</td>
+                            <td>Carnivore (fish, squid)</td>
+                            <td>2-2.5 meters</td>
+                            <td><span class="badge bg-success">Least Concern</span></td>
+                        </tr>
+                        <tr>
+                            <td>Seahorse</td>
+                            <td><em>Hippocampus</em></td>
+                            <td><span class="badge bg-success">Fish</span></td>
+                            <td>Seagrass beds</td>
+                            <td>Carnivore (tiny crustaceans)</td>
+                            <td>1.5-35 cm</td>
+                            <td><span class="badge bg-danger">Vulnerable</span></td>
+                        </tr>
+                        <tr>
+                            <td>Blue Spotted Stingray</td>
+                            <td><em>Taeniura lymma</em></td>
+                            <td><span class="badge bg-success">Fish</span></td>
+                            <td>Shallow tropical waters</td>
+                            <td>Carnivore (mollusks, worms)</td>
+                            <td>35 cm width</td>
+                            <td><span class="badge bg-warning">Near Threatened</span></td>
+                        </tr>
+                        <tr>
+                            <td>Gentoo Penguin</td>
+                            <td><em>Pygoscelis papua</em></td>
+                            <td><span class="badge bg-warning">Bird</span></td>
+                            <td>Subantarctic islands</td>
+                            <td>Carnivore (krill, fish)</td>
+                            <td>51-90 cm</td>
+                            <td><span class="badge bg-success">Least Concern</span></td>
+                        </tr>
+                        <tr>
+                            <td>Crown-of-Thorns Starfish</td>
+                            <td><em>Acanthaster planci</em></td>
+                            <td><span class="badge bg-danger">Invertebrate</span></td>
+                            <td>Coral reefs</td>
+                            <td>Coral polyps</td>
+                            <td>25-35 cm diameter</td>
+                            <td><span class="badge bg-warning">Near Threatened</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="alert alert-info mt-3">
+                <i class="fas fa-info-circle"></i> <strong>Note:</strong> Table shows information about 12 featured marine species. Our database contains information on 200+ marine species.
+            </div>
+        </section>
+        
+
+        <!-- CONSERVATION STATUS LEGEND -->
+        <section class="mb-5">
+            <h3 class="mb-3">Conservation Status Legend</h3>
+            <div class="row">
+                <div class="col-md-3 col-6 mb-2">
+                    <span class="badge bg-success p-2 w-100">Least Concern</span>
+                    <small class="text- d-block">Species is widespread</small>
+                </div>
+                <div class="col-md-3 col-6 mb-2">
+                    <span class="badge bg-warning p-2 w-100">Near Threatened</span>
+                    <small class="text- d-block">Close to being at risk</small>
+                </div>
+                <div class="col-md-3 col-6 mb-2">
+                    <span class="badge bg-danger p-2 w-100">Vulnerable</span>
+                    <small class="text- d-block">High risk in the wild</small>
+                </div>
+                <div class="col-md-3 col-6 mb-2">
+                    <span class="badge bg-dark p-2 w-100">Endangered</span>
+                    <small class="text- d-block">Very high risk</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATIONAL RESOURCES -->
+        <section class="mb-5">
+            <div class="card">
+                <div class="card-body">
+                    <h3><i class="fas fa-book-open"></i> Educational Resources</h3>
+                    <p>Learn more about marine life through our resources:</p>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-video fa-3x text-primary mb-3"></i>
+                                    <h5>Virtual Tours</h5>
+                                    <p>Explore our exhibits online</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-download fa-3x text-success mb-3"></i>
+                                    <h5>Download Guides</h5>
+                                    <p>Species identification sheets</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-chalkboard-teacher fa-3x text-warning mb-3"></i>
+                                    <h5>School Programs</h5>
+                                    <p>Educational visits for students</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Marine Life Conservation</h5>
+                    <p>Protecting ocean biodiversity since 2010</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="events.html">Educational Events</a></li>
+                        <li><a href="gallery.html">Species Gallery</a></li>
+                        <li><a href="booking.html">Research Visits</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Research Partner</h5>
+                    <p><i class="fas fa-university"></i> Pakistan Marine Research Institute</p>
+                    <p><i class="fas fa-globe"></i> IUCN Marine Program</p>
+                </div>
+            </div>
+            <hr>
+            <p class="text-center mb-0">&copy; 2024 LOCALS MARINE. Marine Life Database v2.1</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Filter functionality for species cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const speciesItems = document.querySelectorAll('.species-item');
+            
+            // Add "Bird" filter button
+            const filterContainer = document.getElementById('filterButtons');
+            const birdButton = document.createElement('button');
+            birdButton.className = 'btn btn-outline-secondary filter-btn';
+            birdButton.setAttribute('data-filter', 'bird');
+            birdButton.textContent = 'Birds';
+            filterContainer.appendChild(birdButton);
+            
+            // Update filter buttons list
+            const allFilterButtons = document.querySelectorAll('.filter-btn');
+            
+            allFilterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    allFilterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Show/hide species items based on filter
+                    speciesItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Table row click effect
+            const tableRows = document.querySelectorAll('tbody tr');
+            tableRows.forEach(row => {
+                row.addEventListener('click', function() {
+                    this.classList.toggle('table-primary');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

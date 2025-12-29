@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOCALS MARINE | Events</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+      <!-- Video HTML - body ke start mein ya end mein add karein -->
+<div id="video-background">
+  <video autoplay muted loop playsinline id="bg-video">
+    <!-- Apna video URL yahaan dalen -->
+    <source src="/Videos/video4.mp4" type="video/mp4">
+    <!-- Alternative sources agar needed ho -->
+    <source src="apna-video.webm" type="video/webm">
+    Your browser does not support HTML5 video.
+  </video>
+  <div class="video-overlay"></div>
+</div>
+
+
+
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/aqua-logo.jpg" alt="Marine World Logo" height="50">
+                <span class="ms-2">LOCALS MARINE</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="marine-life.html">Marine Life</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="events.html">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+                    <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="container mt-5 pt-4">
+        <div class="text-center mb-5">
+            <h1 style="color: black; background-color: rgb(255, 255, 255); padding: 10px; border-radius: 8px;"class="display-4"><i class="fas fa-calendar-alt"></i> Events</h1>
+            <p class="lead">Check out our exciting marine events and activities</p>
+        </div>
+
+        <!-- EVENTS TABLE -->
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center mb-4">Children's Special Events</h2>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Event Name</th>
+                                <th>Age Group</th>
+                                <th>Day & Time</th>
+                                <th>Duration</th>
+                                <th>Price</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Dolphin Show for Kids</td>
+                                <td>5-12 Years</td>
+                                <td>Saturday, 4:00 PM</td>
+                                <td>45 minutes</td>
+                                <td>Rs. 500</td>
+                                <td><a href="booking.html" class="btn btn-sm btn-success">Book Now</a></td>
+                            </tr>
+                            <tr>
+                                <td>Marine Life Drawing</td>
+                                <td>4-10 Years</td>
+                                <td>Sunday, 3:00 PM</td>
+                                <td>1 hour</td>
+                                <td>Rs. 300</td>
+                                <td><a href="booking.html" class="btn btn-sm btn-success">Book Now</a></td>
+                            </tr>
+                            <tr>
+                                <td>Aquarium Treasure Hunt</td>
+                                <td>6-14 Years</td>
+                                <td>Friday, 5:00 PM</td>
+                                <td>1.5 hours</td>
+                                <td>Rs. 700</td>
+                                <td><a href="booking.html" class="btn btn-sm btn-success">Book Now</a></td>
+                            </tr>
+                            <tr>
+                                <td>Meet the Turtles</td>
+                                <td>All Ages</td>
+                                <td>Daily, 2:00 PM</td>
+                                <td>30 minutes</td>
+                                <td>Rs. 200</td>
+                                <td><a href="booking.html" class="btn btn-sm btn-success">Book Now</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <!-- REGULAR EVENTS -->
+        <section class="mt-5">
+            <h2 class="mb-4">Regular Daily Events</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-dolphin"></i> Dolphin Show</h5>
+                            <p class="card-text"><strong>Time:</strong> 3:00 PM & 6:00 PM Daily</p>
+                            <p class="card-text"><strong>Duration:</strong> 45 minutes</p>
+                            <p class="card-text"><strong>Location:</strong> Main Pool</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-fish"></i> Shark Feeding</h5>
+                            <p class="card-text"><strong>Time:</strong> 2:00 PM Daily</p>
+                            <p class="card-text"><strong>Duration:</strong> 30 minutes</p>
+                            <p class="card-text"><strong>Location:</strong> Shark Tunnel</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-star"></i> Penguin Parade</h5>
+                            <p class="card-text"><strong>Time:</strong> 11:00 AM Daily</p>
+                            <p class="card-text"><strong>Duration:</strong> 20 minutes</p>
+                            <p class="card-text"><strong>Location:</strong> Penguin Zone</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-hand-paper"></i> Touch Pool Session</h5>
+                            <p class="card-text"><strong>Time:</strong> 10:00 AM - 5:00 PM</p>
+                            <p class="card-text"><strong>Duration:</strong> All day</p>
+                            <p class="card-text"><strong>Location:</strong> Interactive Zone</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Video HTML - body ke start mein ya end mein add karein -->
+<div id="video-background">
+  <video autoplay muted loop playsinline id="bg-video">
+    <!-- Apna video URL yahaan dalen -->
+    <source src="Videos/video4.mp4" type="video/mp4">
+    <!-- Alternative sources agar needed ho -->
+    <source src="apna-video.webm" type="video/webm">
+    Your browser does not support HTML5 video.
+  </video>
+  <div class="video-overlay"></div>
+</div>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>LOCALS MARINE</h5>
+                    <p>Exploring ocean wonders since 2010</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="booking.html">Booking</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact</h5>
+                    <p><i class="fas fa-map-marker-alt"></i> Sea View Road, Karachi</p>
+                    <p><i class="fas fa-phone"></i> +92 300 1234567</p>
+                    <p><i class="fas fa-envelope"></i> info@marineworld.pk</p>
+                </div>
+            </div>
+            <hr>
+            <p class="text-center mb-0">&copy; 2024 LOCALS MARINE</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

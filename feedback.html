@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOCALS MARINE | Feedback</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- INLINE CSS FOR FEEDBACK PAGE -->
+    <style>
+        /* Feedback Page Specific Styles */
+        .rating {
+            direction: rtl;
+            display: inline-block;
+        }
+        
+        .rating input {
+            display: none;
+        }
+        
+        .rating label {
+            font-size: 2rem;
+            color: #ddd;
+            cursor: pointer;
+            padding: 0 5px;
+        }
+        
+        .rating label:hover,
+        .rating label:hover ~ label,
+        .rating input:checked ~ label {
+            color: #ffc107;
+        }
+        
+        .rating-small {
+            color: #ffc107;
+            font-size: 1.2rem;
+        }
+        
+        .testimonial {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #00e5ff;
+        }
+        
+        .thank-you {
+            display: none;
+            text-align: center;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            border: 3px solid #00e5ff;
+            margin-top: 30px;
+        }
+        
+        .thank-you i {
+            color: #2af598;
+        }
+        
+        .stat-card {
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: #00e5ff;
+        }
+        
+        .stat-card.border-primary { border-color: #1a237e !important; }
+        .stat-card.border-success { border-color: #00695c !important; }
+        .stat-card.border-info { border-color: #0097a7 !important; }
+        .stat-card.border-warning { border-color: #ff8f00 !important; }
+        
+        .category-rating .form-select {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid #444;
+        }
+        
+        .category-rating .form-select:focus {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: #00e5ff;
+        }
+        
+        /* Form fieldset styling */
+        fieldset {
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        legend {
+            width: auto;
+            padding: 0 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #00e5ff;
+            border-bottom: none;
+        }
+        
+        /* Radio buttons styling */
+        .form-check-input:checked {
+            background-color: #00e5ff;
+            border-color: #00e5ff;
+        }
+        
+        .form-check-input:focus {
+            box-shadow: 0 0 0 0.25rem rgba(0, 229, 255, 0.25);
+        }
+        
+        /* FIX FOR STICKY SIDEBAR */
+        .sticky-sidebar {
+            position: sticky;
+            top: 120px; /* Navbar height + some space */
+            z-index: 99; /* Less than navbar (1000) */
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .rating label {
+                font-size: 1.5rem;
+            }
+            
+            .stat-card {
+                margin-bottom: 15px;
+            }
+            
+            fieldset {
+                padding: 15px;
+            }
+            
+            .sticky-sidebar {
+                position: static;
+                top: auto;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .rating label {
+                font-size: 1.2rem;
+                padding: 0 3px;
+            }
+            
+            .thank-you {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+      <!-- Video HTML - body ke start mein ya end mein add karein -->
+<div id="video-background">
+  <video autoplay muted loop playsinline id="bg-video">
+    <!-- Apna video URL yahaan dalen -->
+    <source src="/Videos/video4.mp4" type="video/mp4">
+    <!-- Alternative sources agar needed ho -->
+    <source src="apna-video.webm" type="video/webm">
+    Your browser does not support HTML5 video.
+  </video>
+  <div class="video-overlay"></div>
+</div>
+
+
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/aqua-logo.jpg" alt="Marine World Logo" height="50">
+                <span class="ms-2">LOCALS MARINE</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="marine-life.html">Marine Life</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="feedback.html">Feedback</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="container mt-5 pt-4">
+        <!-- Page Header -->
+        <div class="text-center mb-5">
+            <h1 style="color: black; background-color: rgb(255, 255, 255); padding: 10px; border-radius: 8px;"class="display-4"><i class="fas fa-comment-dots"></i> Share Your Feedback</h1>
+            <p class="lead">Help us improve your Marine World experience</p>
+        </div>
+
+        <div class="row">
+            <!-- Left Column: Feedback Form -->
+            <div class="col-lg-8">
+                <div class="card shadow mb-5">
+                    <div class="card-header" style="background: #1a237e; color: white;">
+                        <h3 class="mb-0"><i class="fas fa-edit"></i> Feedback Form</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="feedbackForm" novalidate>
+                            <!-- Personal Information -->
+                            <fieldset>
+                                <legend>Personal Information</legend>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="fullName" class="form-label">Full Name *</label>
+                                        <input type="text" class="form-control" id="fullName" pattern="[A-Za-z\s]+" title="Only letters and spaces allowed" required>
+                                        <div class="invalid-feedback">Please enter your name (letters and spaces only)</div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="email" class="form-label">Email Address *</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                        <div class="invalid-feedback">Please enter a valid email</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="phone" class="form-label">Phone Number</label>
+                                        <input type="tel" class="form-control" id="phone" pattern="03[0-9]{9}">
+                                        <div class="form-text">Format: 03XXXXXXXXX</div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="visitDate" class="form-label">Date of Visit *</label>
+                                        <input type="date" class="form-control" id="visitDate" required>
+                                        <div class="invalid-feedback">Please select visit date</div>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <!-- Rating Section -->
+                            <fieldset>
+                                <legend>Overall Rating</legend>
+                                <div class="text-center mb-3">
+                                    <div class="rating mb-3">
+                                        <input type="radio" id="star5" name="rating" value="5">
+                                        <label for="star5" title="Excellent">★</label>
+                                        <input type="radio" id="star4" name="rating" value="4">
+                                        <label for="star4" title="Good">★</label>
+                                        <input type="radio" id="star3" name="rating" value="3">
+                                        <label for="star3" title="Average">★</label>
+                                        <input type="radio" id="star2" name="rating" value="2">
+                                        <label for="star2" title="Poor">★</label>
+                                        <input type="radio" id="star1" name="rating" value="1" required>
+                                        <label for="star1" title="Very Poor">★</label>
+                                    </div>
+                                    <div class="text">
+                                        <small>Click stars to rate (1 = Very Poor, 5 = Excellent)</small>
+                                    </div>
+                                    <div class="invalid-feedback d-block" id="ratingError"></div>
+                                </div>
+                            </fieldset>
+
+                            <!-- Category Ratings -->
+                            <fieldset class="category-rating">
+                                <legend>Category Ratings</legend>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Facility Cleanliness</label>
+                                        <select class="form-select" id="cleanliness" required>
+                                            <option value="">Select rating</option>
+                                            <option value="5">Excellent</option>
+                                            <option value="4">Good</option>
+                                            <option value="3">Average</option>
+                                            <option value="2">Poor</option>
+                                            <option value="1">Very Poor</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Staff Friendliness</label>
+                                        <select class="form-select" id="staff" required>
+                                            <option value="">Select rating</option>
+                                            <option value="5">Excellent</option>
+                                            <option value="4">Good</option>
+                                            <option value="3">Average</option>
+                                            <option value="2">Poor</option>
+                                            <option value="1">Very Poor</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Animal Exhibits</label>
+                                        <select class="form-select" id="exhibits" required>
+                                            <option value="">Select rating</option>
+                                            <option value="5">Excellent</option>
+                                            <option value="4">Good</option>
+                                            <option value="3">Average</option>
+                                            <option value="2">Poor</option>
+                                            <option value="1">Very Poor</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Value for Money</label>
+                                        <select class="form-select" id="value" required>
+                                            <option value="">Select rating</option>
+                                            <option value="5">Excellent</option>
+                                            <option value="4">Good</option>
+                                            <option value="3">Average</option>
+                                            <option value="2">Poor</option>
+                                            <option value="1">Very Poor</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <!-- Feedback Details -->
+                            <fieldset>
+                                <legend>Your Feedback</legend>
+                                <div class="mb-3">
+                                    <label for="visitPurpose" class="form-label">Purpose of Visit *</label>
+                                    <select class="form-select" id="visitPurpose" required>
+                                        <option value="">Select purpose</option>
+                                        <option value="family">Family Outing</option>
+                                        <option value="school">School/Educational Trip</option>
+                                        <option value="tourist">Tourist/Visitor</option>
+                                        <option value="research">Research/Study</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="likedMost" class="form-label">What did you like most? *</label>
+                                    <textarea class="form-control" id="likedMost" rows="3" required></textarea>
+                                    <div class="invalid-feedback">Please tell us what you liked</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="improvement" class="form-label">Suggestions for improvement</label>
+                                    <textarea class="form-control" id="improvement" rows="3"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Would you recommend us to others? *</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="recommend" id="recommendYes" value="yes" required>
+                                        <label class="form-check-label" for="recommendYes">Yes, definitely</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="recommend" id="recommendMaybe" value="maybe">
+                                        <label class="form-check-label" for="recommendMaybe">Maybe</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="recommend" id="recommendNo" value="no">
+                                        <label class="form-check-label" for="recommendNo">No</label>
+                                    </div>
+                                    <div class="invalid-feedback">Please select an option</div>
+                                </div>
+                            </fieldset>
+
+                            <!-- Submit Button -->
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <button type="reset" class="btn btn-secondary me-md-2">
+                                    <i class="fas fa-redo"></i> Reset Form
+                                </button>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-paper-plane"></i> Submit Feedback
+                                </button>
+                            </div>
+                        </form>
+
+                        <!-- Thank You Message -->
+                        <div id="thankYouMessage" class="thank-you">
+                            <i class="fas fa-check-circle fa-5x mb-3"></i>
+                            <h2>Thank You for Your Feedback!</h2>
+                            <p class="lead">Your feedback has been submitted successfully.</p>
+                            <p>We appreciate your time and will use your suggestions to improve Marine World.</p>
+                            <div class="mt-4">
+                                <a href="index.html" class="btn btn-primary me-2">
+                                    <i class="fas fa-home"></i> Back to Home
+                                </a>
+                                <a href="gallery.html" class="btn btn-outline-light">
+                                    <i class="fas fa-images"></i> Visit Gallery
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Info & Testimonials - FIXED -->
+            <div class="col-lg-4">
+                <div class="sticky-sidebar">
+                    <!-- Why Feedback Matters -->
+                    <div class="card mb-4">
+                        <div class="card-header" style="background: #0097a7; color: white;">
+                            <h5 class="mb-0"><i class="fas fa-heart"></i> Why Your Feedback Matters</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success"></i> Helps us improve facilities</li>
+                                <li class="mb-2"><i class="fas fa-check text-success"></i> Better animal care</li>
+                                <li class="mb-2"><i class="fas fa-check text-success"></i> Enhanced visitor experience</li>
+                                <li class="mb-2"><i class="fas fa-check text-success"></i> New educational programs</li>
+                                <li class="mb-2"><i class="fas fa-check text-success"></i> Conservation efforts</li>
+                            </ul>
+                            <div class="alert alert-warning mt-3">
+                                <i class="fas fa-lightbulb"></i> <strong>Tip:</strong> Be specific in your feedback for better improvements
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Testimonials -->
+                    <div class="card mb-4">
+                        <div class="card-header" style="background: #00695c; color: white;">
+                            <h5 class="mb-0"><i class="fas fa-star"></i> Recent Feedback</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="testimonial mb-3">
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="rating-small">
+                                        ★★★★★
+                                    </div>
+                                    <span class="ms-2 text">- Ali R.</span>
+                                </div>
+                                <p class="mb-0">"Amazing experience! My kids loved the dolphin show."</p>
+                            </div>
+                            <hr>
+                            <div class="testimonial mb-3">
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="rating-small">
+                                        ★★★★☆
+                                    </div>
+                                    <span class="ms-2 text">- Sara K.</span>
+                                </div>
+                                <p class="mb-0">"Great educational tour for school children."</p>
+                            </div>
+                            <hr>
+                            <div class="testimonial">
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="rating-small">
+                                        ★★★★★
+                                    </div>
+                                    <span class="ms-2 text">- Ahmed T.</span>
+                                </div>
+                                <p class="mb-0">"Clean facilities and friendly staff."</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="card">
+                        <div class="card-body">
+                            <h6><i class="fas fa-question-circle"></i> Need Help?</h6>
+                            <p class="mb-2">Contact our feedback team:</p>
+                            <p class="mb-1"><i class="fas fa-envelope"></i> feedback@marineworld.pk</p>
+                            <p class="mb-0"><i class="fas fa-phone"></i> +92 300 1112233</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feedback Statistics -->
+        <section class="mt-5">
+            <h3 class="text-center mb-4">Visitor Feedback Statistics</h3>
+            <div class="row text-center">
+                <div class="col-md-3 col-6 mb-3">
+                    <div class="card stat-card border-primary">
+                        <div class="card-body">
+                            <h2 class="text-primary">4.8</h2>
+                            <p class="mb-0">Average Rating</p>
+                            <small class="text">Out of 5 stars</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-3">
+                    <div class="card stat-card border-success">
+                        <div class="card-body">
+                            <h2 class="text-success">94%</h2>
+                            <p class="mb-0">Would Recommend</p>
+                            <small class="text">Visitor satisfaction</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-3">
+                    <div class="card stat-card border-info">
+                        <div class="card-body">
+                            <h2 class="text-info">2,500+</h2>
+                            <p class="mb-0">Feedbacks</p>
+                            <small class="text">This month</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-3">
+                    <div class="card stat-card border-warning">
+                        <div class="card-body">
+                            <h2 class="text-warning">24h</h2>
+                            <p class="mb-0">Response Time</p>
+                            <small class="text">Average reply time</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>LOCALS MARINE</h5>
+                    <p>Your feedback helps us grow!</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="booking.html">Book Tickets</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Feedback Related</h5>
+                    <p><i class="fas fa-envelope"></i> feedback@marineworld.pk</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 9 AM - 6 PM</p>
+                    <p><i class="fas fa-shield-alt"></i> Privacy Protected</p>
+                </div>
+            </div>
+            <hr>
+            <p class="text-center mb-0">&copy; 2024 LOCALS MARINE. All feedback is confidential.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- INLINE JAVASCRIPT FOR FEEDBACK PAGE -->
+    <script>
+        // Feedback Form Validation and Submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('feedbackForm');
+            const thankYouMessage = document.getElementById('thankYouMessage');
+            const ratingError = document.getElementById('ratingError');
+            
+            // Star rating validation
+            const starInputs = document.querySelectorAll('input[name="rating"]');
+            starInputs.forEach(star => {
+                star.addEventListener('change', function() {
+                    ratingError.textContent = '';
+                    ratingError.style.display = 'none';
+                });
+            });
+            
+            // Form submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Validate star rating
+                const isRatingSelected = document.querySelector('input[name="rating"]:checked');
+                if (!isRatingSelected) {
+                    ratingError.textContent = 'Please select a star rating';
+                    ratingError.style.display = 'block';
+                    return;
+                }
+                
+                // Check form validity
+                if (!form.checkValidity()) {
+                    e.stopPropagation();
+                    form.classList.add('was-validated');
+                    
+                    // Check individual required fields
+                    const requiredFields = [
+                        'fullName', 'email', 'visitDate', 'cleanliness', 
+                        'staff', 'exhibits', 'value', 'visitPurpose', 'likedMost'
+                    ];
+                    
+                    let hasError = false;
+                    requiredFields.forEach(fieldId => {
+                        const field = document.getElementById(fieldId);
+                        if (!field.value.trim()) {
+                            field.classList.add('is-invalid');
+                            hasError = true;
+                        }
+                    });
+                    
+                    // Check recommend radio buttons
+                    const recommendSelected = document.querySelector('input[name="recommend"]:checked');
+                    if (!recommendSelected) {
+                        document.querySelectorAll('input[name="recommend"]').forEach(radio => {
+                            radio.classList.add('is-invalid');
+                        });
+                        hasError = true;
+                    }
+                    
+                    if (hasError) return;
+                }
+                
+                // Get form data
+                const formData = {
+                    name: document.getElementById('fullName').value,
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value || 'Not provided',
+                    visitDate: document.getElementById('visitDate').value,
+                    rating: document.querySelector('input[name="rating"]:checked').value,
+                    cleanliness: document.getElementById('cleanliness').value,
+                    staff: document.getElementById('staff').value,
+                    exhibits: document.getElementById('exhibits').value,
+                    value: document.getElementById('value').value,
+                    purpose: document.getElementById('visitPurpose').value,
+                    likedMost: document.getElementById('likedMost').value,
+                    improvement: document.getElementById('improvement').value || 'Not provided',
+                    recommend: document.querySelector('input[name="recommend"]:checked').value
+                };
+                
+                // Show thank you message
+                form.style.display = 'none';
+                thankYouMessage.style.display = 'block';
+                
+                // Log to console (in real app, send to server)
+                console.log('Feedback submitted:', formData);
+                
+                // Reset form after 5 seconds (for demo)
+                setTimeout(function() {
+                    form.reset();
+                    form.classList.remove('was-validated');
+                    form.style.display = 'block';
+                    thankYouMessage.style.display = 'none';
+                }, 5000);
+            });
+            
+            // Reset form
+            form.addEventListener('reset', function() {
+                form.classList.remove('was-validated');
+                ratingError.textContent = '';
+                ratingError.style.display = 'none';
+                thankYouMessage.style.display = 'none';
+                form.style.display = 'block';
+                
+                // Clear invalid classes
+                document.querySelectorAll('.is-invalid').forEach(el => {
+                    el.classList.remove('is-invalid');
+                });
+            });
+            
+            // Real-time validation for fields
+            const fieldsToValidate = [
+                'fullName', 'email', 'phone', 'visitDate', 
+                'cleanliness', 'staff', 'exhibits', 'value',
+                'visitPurpose', 'likedMost'
+            ];
+            
+            fieldsToValidate.forEach(fieldId => {
+                const field = document.getElementById(fieldId);
+                if (field) {
+                    field.addEventListener('input', function() {
+                        if (this.checkValidity()) {
+                            this.classList.remove('is-invalid');
+                            this.classList.add('is-valid');
+                        } else {
+                            this.classList.remove('is-valid');
+                        }
+                    });
+                    
+                    field.addEventListener('blur', function() {
+                        if (!this.checkValidity()) {
+                            this.classList.add('is-invalid');
+                        }
+                    });
+                }
+            });
+            
+            // Real-time validation for radio buttons
+            const recommendRadios = document.querySelectorAll('input[name="recommend"]');
+            recommendRadios.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    recommendRadios.forEach(r => r.classList.remove('is-invalid'));
+                });
+            });
+        });
+    </script>
+</body>
+</html>

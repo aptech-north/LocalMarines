@@ -1,0 +1,711 @@
+/* ===== MARINE WORLD - COMPLETE STYLES ===== */
+
+/* 1. COLOR THEME */
+:root {
+    --deep-ocean: #0a1a3a;
+    --ocean-blue: #1a3a7a;
+    --aqua-glow: #00e5ff;
+    --coral: #ff6b8b;
+    --sea-green: #2af598;
+    --glass-white: rgba(255, 255, 255, 0.95);
+    --glass-dark: rgba(10, 26, 58, 0.9);
+}
+
+/* 2. BASE STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background: #000000;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 3. NAVIGATION */
+nav { 
+  position: relative !important; 
+  z-index: 9999 !important; 
+  background: rgba(0,0,0,0.7) !important; 
+}
+.navbar {
+    background: #000000;
+    border-bottom: 1px solid #333;
+     box-shadow: 0 4px 20px rgba(0, 229, 255, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.navbar-brand {
+    color: var(--aqua-glow);
+    font-weight: 700;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar-brand img {
+    height: 40px;
+    width: auto;
+    max-width: 150px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* On hover effect */
+.navbar-brand:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.2) drop-shadow(0 0 8px var(--aqua-glow));
+}
+
+/* Logo text styling */
+.navbar-brand span {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.nav-link {
+   color: rgba(255, 255, 255, 0.9) !important;
+    padding: 8px 15px !important;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    margin: 0 2px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--aqua-glow);
+    background: rgba(0, 229, 255, 0.15);
+}
+
+/* 4. MAIN CONTENT */
+main.container {
+    flex: 1;
+    padding-top: 80px;
+    padding-bottom: 40px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 5. CAROUSEL */
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid var(--aqua-glow);
+    bottom: 30%;
+    left: 10%;
+    right: 10%;
+}
+
+.carousel-item video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.carousel-item h1 {
+    color: var(--aqua-glow);
+    margin-bottom: 15px;
+}
+
+/* 6. CARDS */
+.card {
+    background: #1a1a1a;
+    color: white;
+    border: 1px solid #333;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--aqua-glow);
+    box-shadow: 0 10px 25px rgba(0, 229, 255, 0.2);
+}
+
+.feature-card {
+    background: var(--glass-dark);
+    border: 2px solid rgba(0, 229, 255, 0.3);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--aqua-glow);
+}
+
+.feature-card i {
+    color: var(--aqua-glow);
+}
+
+.attraction-card {
+    background: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease; 
+    border: 2px solid rgba(0, 229, 255, 0.3) ;
+}
+
+.attraction-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--aqua-glow);
+}
+
+.attraction-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.attraction-content {
+    padding: 15px;
+}
+
+/* 7. STATISTICS */
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--aqua-glow);
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    color: var(--glass-white);
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+/* 8. ACCORDION */
+.accordion-item {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.accordion-button {
+    background: rgba(0, 229, 255, 0.1);
+    color: var(--aqua-glow);
+    font-weight: 600;
+    border: none;
+}
+
+.accordion-button:not(.collapsed) {
+    background: rgba(0, 229, 255, 0.2);
+    box-shadow: none;
+}
+
+.accordion-body {
+    color: #ffffff;
+    background: #1a1a1a;
+}
+
+/* 9. FORMS */
+.form-control,
+.form-select {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(0, 229, 255, 0.3);
+    color: white;
+    border-radius: 8px;
+    padding: 12px 15px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--aqua-glow);
+    color: white;
+    box-shadow: 0 0 0 0.25rem rgba(0, 229, 255, 0.25);
+}
+
+.form-select option {
+    background: #1a1a1a;
+    color: white;
+}
+
+/* 10. TABLES */
+.table {
+    color: white;
+    background: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table-dark {
+    background: #1a1a1a;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+    background: rgba(0, 229, 255, 0.1);
+}
+
+/* 11. BUTTONS */
+.btn {
+    border-radius: 25px;
+    padding: 10px 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, var(--aqua-glow), #0099ff);
+    color: #000000;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 229, 255, 0.4);
+}
+
+.btn-outline-light {
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-outline-light:hover {
+    background: white;
+    color: #000000;
+}
+
+/* 12. CTA ROUND BUTTONS */
+.pulse-circle {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, var(--aqua-glow), transparent 70%);
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse 2s infinite;
+}
+
+.pulse-circle i {
+    color: #000000;
+    font-size: 2rem;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.cta-round-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.cta-primary {
+    background: linear-gradient(135deg, var(--aqua-glow), var(--sea-green));
+    color: #000000;
+}
+
+.cta-secondary {
+    background: transparent;
+    border: 3px solid var(--aqua-glow);
+    color: var(--aqua-glow);
+}
+
+.cta-round-btn i {
+    margin-bottom: 10px;
+    display: block;
+    font-size: 2.5rem;
+}
+
+.cta-round-btn span {
+    font-size: 0.9rem;
+    display: block;
+}
+
+/* Hover Effects for CTA Buttons */
+.cta-round-btn:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 229, 255, 0.3);
+}
+
+.cta-primary:hover {
+    background: linear-gradient(135deg, var(--sea-green), var(--aqua-glow));
+}
+
+.cta-secondary:hover {
+    background: rgba(0, 229, 255, 0.1);
+    border-color: var(--sea-green);
+    color: var(--sea-green);
+}
+
+/* Trust Badges */
+.trust-badges {
+    margin-top: 50px;
+    padding-top: 20px;
+}
+
+.trust-badges .badge-item {
+    text-align: center;
+    min-width: 100px;
+}
+
+.trust-badges .badge-item i {
+    color: var(--aqua-glow);
+}
+
+/* 13. FOOTER */
+.footer {
+    background: #000000;
+    border-top: 3px solid var(--sea-green);
+    color: white;
+    padding: 30px 0 20px;
+    margin-top: auto;
+    width: 100%;
+}
+
+.footer h5 {
+    color: var(--aqua-glow);
+    margin-bottom: 15px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--aqua-glow);
+    text-decoration: underline;
+}
+
+.footer hr {
+    border-color: #444;
+    margin: 20px 0;
+}
+
+/* 14. RATING */
+.rating {
+    direction: rtl;
+    display: inline-block;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    font-size: 2rem;
+    color: #ddd;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.rating label:hover,
+.rating label:hover ~ label,
+.rating input:checked ~ label {
+    color: #ffc107;
+}
+
+/* 15. TIMELINE */
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--aqua-glow), var(--sea-green));
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -33px;
+    top: 5px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--coral);
+    border: 3px solid white;
+}
+
+/* 16. RESPONSIVE */
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+    
+    main.container {
+        padding-top: 70px;
+        padding-bottom: 20px;
+    }
+    
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    .navbar-brand img {
+        height: 35px;
+    }
+    
+    .carousel-caption {
+        padding: 15px;
+        bottom: 10%;
+        left: 5%;
+        right: 5%;
+    }
+    
+    .carousel-item h1 {
+        font-size: 1.5rem;
+    }
+    
+    .carousel-item p {
+        font-size: 0.9rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .feature-card {
+        padding: 20px;
+    }
+    
+    /* CTA Buttons Responsive */
+    .cta-buttons {
+        gap: 20px;
+    }
+    
+    .cta-round-btn {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .cta-round-btn i {
+        font-size: 2rem;
+    }
+    
+    .cta-round-btn span {
+        font-size: 0.8rem;
+    }
+    
+    .pulse-circle {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .pulse-circle i {
+        font-size: 1.5rem;
+    }
+    
+    .footer {
+        padding: 20px 0 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-collapse {
+        background: #000000;
+        padding: 10px;
+        border-radius: 0 0 10px 10px;
+        border: 1px solid var(--aqua-glow);
+    }
+    
+    .carousel-caption .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .attraction-card {
+        margin-bottom: 20px;
+    }
+    
+    /* CTA Buttons Mobile */
+    .cta-buttons {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    
+    .trust-badges .d-flex {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    
+    .trust-badges .badge-item {
+        min-width: 80px;
+    }
+}
+
+/* 17. UTILITIES */
+.section-title {
+    color: var(--aqua-glow);
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-3 { margin-bottom: 1rem; }
+.mb-4 { margin-bottom: 1.5rem; }
+.mb-5 { margin-bottom: 3rem; }
+.mt-3 { margin-top: 1rem; }
+.mt-4 { margin-top: 1.5rem; }
+.mt-5 { margin-top: 3rem; }
+
+.py-3 { padding-top: 1rem; padding-bottom: 1rem; }
+.py-4 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+.py-5 { padding-top: 3rem; padding-bottom: 3rem; }
+
+.row {
+    margin-right: -10px;
+    margin-left: -10px;
+}
+
+.row > [class*="col-"] {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 18. SCROLLBAR */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--aqua-glow), var(--sea-green));
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(var(--sea-green), var(--aqua-glow));
+}
+
+/* 19. PRINT STYLES */
+@media print {
+    .navbar,
+    footer,
+    .btn,
+    .no-print {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .card {
+        border: 1px solid #ccc !important;
+        background: white !important;
+        color: black !important;
+    }
+}
+/* Video Background CSS */
+  #video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+  }
+  
+  #bg-video {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+  }
+  
+  /* Agar aapka content video ke upar hai to ye add karein */
+  body > *:not(#video-background):not(.video-overlay) {
+    position: relative;
+    z-index: 1;
+  }

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOCALS MARINE | Contact Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- INLINE CSS FOR CONTACT PAGE -->
+    <style>
+        /* Contact Page Specific Styles */
+        .contact-card {
+            transition: transform 0.3s;
+            border-left: 5px solid transparent;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-card.address { border-left-color: #1a237e; }
+        .contact-card.phone { border-left-color: #00695c; }
+        .contact-card.email { border-left-color: #ff8f00; }
+        .contact-card.support { border-left-color: #6a1b9a; }
+        
+        .map-container {
+            border: 2px solid rgba(0, 229, 255, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            background: #1a1a1a;
+            padding: 20px;
+        }
+        
+        .map-placeholder {
+            height: 200px;
+            background: linear-gradient(45deg, #0a1a3a, #1a3a7a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+        }
+        
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px;
+            transition: all 0.3s;
+        }
+        
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        /* Timing Table Styles */
+        .timing-table tr:hover {
+            background: rgba(0, 229, 255, 0.1);
+        }
+        
+        .timing-table .table-info {
+            background: rgba(0, 229, 255, 0.15);
+        }
+        
+        .timing-table .table-success {
+            background: rgba(42, 245, 152, 0.15);
+        }
+        
+        /* Form Styles */
+        .contact-form .form-control {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid #444;
+        }
+        
+        .contact-form .form-control:focus {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: #00e5ff;
+            box-shadow: 0 0 0 0.25rem rgba(0, 229, 255, 0.25);
+        }
+        
+        /* FIX FOR STICKY SIDEBAR */
+        .sticky-sidebar {
+            position: sticky;
+            top: 120px; /* Navbar height + some space */
+            z-index: 99; /* Less than navbar (1000) */
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contact-card {
+                margin-bottom: 20px;
+            }
+            
+            .social-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 0.9rem;
+            }
+            
+            .sticky-sidebar {
+                position: static;
+                top: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+
+      <!-- Video HTML - body ke start mein ya end mein add karein -->
+<div id="video-background">
+  <video autoplay muted loop playsinline id="bg-video">
+    <!-- Apna video URL yahaan dalen -->
+    <source src="/Videos/video4.mp4" type="video/mp4">
+    <!-- Alternative sources agar needed ho -->
+    <source src="apna-video.webm" type="video/webm">
+    Your browser does not support HTML5 video.
+  </video>
+  <div class="video-overlay"></div>
+</div>
+
+
+
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/aqua-logo.jpg" alt="Marine World Logo" height="50">
+                <span class="ms-2">LOCALS MARINE</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="marine-life.html">Marine Life</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+                    <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="container mt-5 pt-4">
+        <!-- Page Header -->
+        <div class="text-center mb-5">
+            <h1 style="color: black; background-color: rgb(255, 255, 255); padding: 10px; border-radius: 8px;"class="display-4"><i class="fas fa-address-book"></i> Contact Us</h1>
+            <p class="lead">Get in touch with Marine World</p>
+        </div>
+
+        <div class="row">
+            <!-- Left Column: Contact Details & Location -->
+            <div class="col-lg-8">
+                <!-- Contact Details -->
+                <section class="mb-5">
+                    <h2 class="border-bottom pb-2 mb-4">Contact Information</h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100 contact-card address">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-map-marker-alt fa-3x mb-3" style="color: #1a237e;"></i>
+                                    <h4>Address</h4>
+                                    <p class="mb-1">Marine World Aquarium</p>
+                                    <p class="mb-1">Sea View Road, Block 4</p>
+                                    <p class="mb-1">Clifton, Karachi</p>
+                                    <p>Pakistan</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100 contact-card phone">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-phone fa-3x mb-3" style="color: #00695c;"></i>
+                                    <h4>Phone Numbers</h4>
+                                    <p class="mb-1"><strong>Information:</strong> +92 21 1234567</p>
+                                    <p class="mb-1"><strong>Bookings:</strong> +92 300 1234567</p>
+                                    <p class="mb-1"><strong>WhatsApp:</strong> +92 321 1234567</p>
+                                    <p class="mb-0"><strong>Emergency:</strong> +92 300 7654321</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100 contact-card email">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-envelope fa-3x mb-3" style="color: #ff8f00;"></i>
+                                    <h4>Email Addresses</h4>
+                                    <p class="mb-1"><strong>General:</strong> info@marineworld.pk</p>
+                                    <p class="mb-1"><strong>Bookings:</strong> bookings@marineworld.pk</p>
+                                    <p class="mb-1"><strong>Education:</strong> education@marineworld.pk</p>
+                                    <p class="mb-0"><strong>Partnership:</strong> partners@marineworld.pk</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100 contact-card support">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-headset fa-3x mb-3" style="color: #6a1b9a;"></i>
+                                    <h4>Customer Support</h4>
+                                    <p class="mb-1"><strong>Hours:</strong> 9 AM - 9 PM Daily</p>
+                                    <p class="mb-1"><strong>Live Chat:</strong> Available on website</p>
+                                    <p class="mb-1"><strong>Response Time:</strong> Within 24 hours</p>
+                                    <p class="mb-0"><strong>Social Media:</strong> @MarineWorldPK</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Timing & Location -->
+                <section class="mb-5">
+                    <h2 class="border-bottom pb-2 mb-4">Visiting Hours & Location</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header" style="background: #1a237e; color: white;">
+                                    <h5 class="mb-0"><i class="fas fa-clock"></i> Opening Hours</h5>
+                                </div>
+                                <div class="card-body">
+                                    <table class="table table-bordered timing-table">
+                                        <tr class="table-light">
+                                            <td><strong>Monday - Thursday</strong></td>
+                                            <td>9:00 AM - 8:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Friday</strong></td>
+                                            <td>9:00 AM - 9:00 PM</td>
+                                        </tr>
+                                        <tr class="table-light">
+                                            <td><strong>Saturday</strong></td>
+                                            <td>9:00 AM - 10:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Sunday</strong></td>
+                                            <td>10:00 AM - 9:00 PM</td>
+                                        </tr>
+                                        <tr class="table-info">
+                                            <td><strong><i class="fas fa-child"></i> Children's Hours</strong></td>
+                                            <td>3:00 PM - 6:00 PM (Daily)</td>
+                                        </tr>
+                                        <tr class="table-success">
+                                            <td><strong><i class="fas fa-graduation-cap"></i> School Groups</strong></td>
+                                            <td>10:00 AM - 2:00 PM (Weekdays)</td>
+                                        </tr>
+                                    </table>
+                                    <div class="alert alert-info mt-3">
+                                        <i class="fas fa-info-circle"></i> Last entry: 1 hour before closing
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-header" style="background: #00695c; color: white;">
+                                    <h5 class="mb-0"><i class="fas fa-map-marked-alt"></i> Our Location</h5>
+                                </div>
+                                <div class="card-body">
+                                    <!-- Map Placeholder -->
+                                    <div class="map-container mb-3">
+                                        <div class="map-placeholder">
+                                            <div class="text-center">
+                                                <i class="fas fa-map fa-4x mb-3" style="color: #00e5ff;"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.534049991675!2d67.06268877443392!3d24.981962940386765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb340e584b891c3%3A0x29b2cbc198ba2dbd!2sAptech%20Computer%20Education%20North%20Karachi%20Center!5e0!3m2!1sen!2s!4v1766705791817!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></i>
+                                                <p>Google Maps Integration</p>
+                                                <p><small>Sea View Road, Karachi</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6>Directions:</h6>
+                                    <ul>
+                                        <li><strong>From Airport:</strong> 30 minutes via Sea View Road</li>
+                                        <li><strong>Public Transport:</strong> Bus routes 1, 5, 9 stop nearby</li>
+                                        <li><strong>Parking:</strong> Free parking for 100+ vehicles</li>
+                                        <li><strong>Landmark:</strong> Near Clifton Beach</li>
+                                    </ul>
+                                    <button class="btn btn-outline-primary w-100" id="getDirections">
+                                        <i class="fas fa-directions"></i> Get Directions on Google Maps
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            
+
+            <!-- Right Column: Contact Form - FIXED -->
+            <div class="col-lg-4">
+                <div class="sticky-sidebar">
+                    <div class="card shadow">
+                        <div class="card-header" style="background: #1a237e; color: white;">
+                            <h4 class="mb-0"><i class="fas fa-paper-plane"></i> Send Us a Message</h4>
+                        </div>
+                        <div class="card-body contact-form">
+                            <form id="contactForm">
+                                <div class="mb-3">
+                                    <label class="form-label">Your Name *</label>
+                                    <input type="text" class="form-control" id="contactName" pattern="[A-Za-z\s]+" title="Only letters and spaces allowed" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" id="contactEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="contactPhone" pattern="03[0-9]{9}">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Subject</label>
+                                    <select class="form-select" id="contactSubject">
+                                        <option value="">Select subject</option>
+                                        <option value="general">General Inquiry</option>
+                                        <option value="booking">Booking Question</option>
+                                        <option value="school">School Visit</option>
+                                        <option value="feedback">Feedback</option>
+                                        <option value="partnership">Partnership</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Message *</label>
+                                    <textarea class="form-control" id="contactMessage" rows="4" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">
+                                    <i class="fas fa-paper-plane"></i> Send Message
+                                </button>
+                            </form>
+                            <div class="mt-4">
+                                <h6><i class="fas fa-share-alt"></i> Follow Us</h6>
+                                <div class="text-center mt-2">
+                                    <a href="#" class="social-btn" style="background: #3b5998; color: white;">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#" class="social-btn" style="background: #1da1f2; color: white;">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a href="#" class="social-btn" style="background: #e4405f; color: white;">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="#" class="social-btn" style="background: #25d366; color: white;">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </a>
+                                    <a href="#" class="social-btn" style="background: #ff0000; color: white;">
+                                        <i class="fab fa-youtube"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>LOCALS MARINE</h5>
+                    <p>Exploring ocean wonders since 2010</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="booking.html">Booking</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact</h5>
+                    <p><i class="fas fa-map-marker-alt"></i> Sea View Road, Karachi</p>
+                    <p><i class="fas fa-phone"></i> +92 300 1234567</p>
+                    <p><i class="fas fa-envelope"></i> info@marineworld.pk</p>
+                </div>
+            </div>
+            <hr>
+            <p class="text-center mb-0">&copy; 2024 LOCALS MARINE</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- INLINE JAVASCRIPT FOR CONTACT PAGE -->
+    <script>
+        // Contact form submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form values
+                    const name = document.getElementById('contactName').value.trim();
+                    const email = document.getElementById('contactEmail').value.trim();
+                    const message = document.getElementById('contactMessage').value.trim();
+                    
+                    // Simple validation
+                    if (name === '' || email === '' || message === '') {
+                        alert('Please fill in all required fields.');
+                        return;
+                    }
+                    
+                    // Email validation
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        alert('Please enter a valid email address.');
+                        return;
+                    }
+                    
+                    // Phone validation (if provided)
+                    const phone = document.getElementById('contactPhone').value.trim();
+                    if (phone !== '') {
+                        const phoneRegex = /^03[0-9]{9}$/;
+                        if (!phoneRegex.test(phone)) {
+                            alert('Please enter a valid Pakistani phone number (03XXXXXXXXX).');
+                            return;
+                        }
+                    }
+                    
+                    // Success message
+                    alert('Thank you for your message! We will contact you within 24 hours.');
+                    
+                    // Reset form
+                    contactForm.reset();
+                });
+            }
+            
+            // Get Directions button
+            const directionsBtn = document.getElementById('getDirections');
+            if (directionsBtn) {
+                directionsBtn.addEventListener('click', function() {
+                    alert('Opening Google Maps with directions to Marine World...');
+                    // In real implementation, this would open Google Maps
+                    // window.open('https://goo.gl/maps/...', '_blank');
+                });
+            }
+            
+            // Social media buttons hover effect
+            const socialBtns = document.querySelectorAll('.social-btn');
+            socialBtns.forEach(btn => {
+                btn.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px) scale(1.1)';
+                });
+                
+                btn.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

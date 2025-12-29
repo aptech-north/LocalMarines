@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOCALS MARINE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/aqua-logo.jpg" alt="Marine World Logo" height="50">
+                <span class="ms-2">LOCALS MARINE</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="marine-life.html">Marine Life</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+                    <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CAROUSEL -->
+    <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <video autoplay muted loop playsinline class="d-block w-100">
+                    <source src="videos/1674470-hd_1920_1080_24fps.mp4" type="video/mp4">
+                </video>
+                <div class="carousel-caption">
+                    <h1><i class="fas fa-water"></i> Welcome to LOCALS MARINE</h1>
+                    <p>Dive into an extraordinary underwater adventure.</p>
+                    <a href="booking.html" class="btn btn-primary"><i class="fas fa-ticket-alt"></i> Book Adventure</a>
+                    <a href="gallery.html" class="btn btn-outline-light"><i class="fas fa-images"></i> Virtual Tour</a>
+                </div>
+            </div>
+            
+            <div class="carousel-item">
+                <video autoplay muted loop playsinline class="d-block w-100">
+                    <source src="videos/1456996-hd_1920_1080_30fps.mp4" type="video/mp4">
+                </video>
+                <div class="carousel-caption">
+                    <h1><i class="fas fa-water"></i> Explore 200+ Marine Species</h1>
+                    <p>From colorful tropical fish to majestic sea turtles.</p>
+                    <a href="marine-life.html" class="btn btn-success"><i class="fas fa-binoculars"></i> Discover Species</a>
+                </div>
+            </div>
+            
+            <div class="carousel-item">
+                <video autoplay muted loop playsinline class="d-block w-100">
+                    <source src="videos/5358755-uhd_3840_2160_25fps.mp4" type="video/mp4">
+                </video>
+                <div class="carousel-caption">
+                    <h1><i class="fas fa-water"></i> Exciting Daily Shows</h1>
+                    <p>Dolphin performances, shark feeding, penguin parade.</p>
+                    <a href="events.html" class="btn btn-warning"><i class="fas fa-calendar-alt"></i> View Schedule</a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    
+
+    <!-- FEATURES -->
+    <section class="py-5">
+        <div class="container">
+            <h2 style="color: black; background-color: rgb(255, 255, 255); padding: 10px; border-radius: 8px;" class="text-center mb-5">Why Choose Marine World?</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-fish fa-3x mb-3"></i>
+                        <h4>Diverse Marine Life</h4>
+                        <p>Explore over 200 species of marine animals.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-graduation-cap fa-3x mb-3"></i>
+                        <h4>Educational Experience</h4>
+                        <p>Learn about marine conservation.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-child fa-3x mb-3"></i>
+                        <h4>Family Friendly</h4>
+                        <p>Perfect for all ages with special programs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATISTICS -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-6 mb-4">
+                    <h3 class="stat-number">200+</h3>
+                    <p class="stat-label">Marine Species</p>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <h3 class="stat-number">50+</h3>
+                    <p class="stat-label">Aquarium Exhibits</p>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <h3 class="stat-number">10K+</h3>
+                    <p class="stat-label">Happy Visitors</p>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <h3 class="stat-number">24/7</h3>
+                    <p class="stat-label">Conservation Work</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <!-- Video HTML - body ke start mein ya end mein add karein -->
+<div id="video-background">
+  <video autoplay muted loop playsinline id="bg-video">
+    <!-- Apna video URL yahaan dalen -->
+    <source src="/Videos/video4.mp4" type="video/mp4">
+    <!-- Alternative sources agar needed ho -->
+    <source src="apna-video.webm" type="video/webm">
+    Your browser does not support HTML5 video.
+  </video>
+  <div class="video-overlay"></div>
+</div>
+
+
+    <!-- ATTRACTIONS -->
+    <section class="py-5">
+        <div class="container">
+            <h2  style="color: black; background-color: rgb(255, 255, 255); padding: 10px; border-radius: 8px;" class="text-center mb-5">Featured Attractions</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="attraction-card">
+                        <img src="images/img4.jpg" class="img-fluid" alt="Dolphin Show">
+                        <div class="attraction-content">
+                            <h4>Dolphin Show</h4>
+                            <p>Daily performances at 3 PM & 6 PM</p>
+                            <a href="events.html" class="btn btn-sm btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="attraction-card">
+                        <img src="images/img14.jpg" class="img-fluid" alt="Shark Tunnel">
+                        <div class="attraction-content">
+                            <h4>360° Shark Tunnel</h4>
+                            <p>Walk underwater with sharks</p>
+                            <a href="gallery.html" class="btn btn-sm btn-primary">View Gallery</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="attraction-card">
+                        <img src="images/img11.jpg" class="img-fluid" alt="Touch Pool">
+                        <div class="attraction-content">
+                            <h4>Interactive Touch Pool</h4>
+                            <p>Touch starfish and sea cucumbers</p>
+                            <a href="events.html" class="btn btn-sm btn-primary">Experience</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION (FIXED) -->
+    <section class="py-5">
+        <div class="container">
+            <h2  style="color: black; background-color: rgb(255, 255, 255); padding: 10px; border-radius: 8px;" class="text-center mb-5">Frequently Asked Questions</h2>
+            
+            <div class="accordion" id="faqAccordion">
+                <!-- Question 1 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="true">
+                            <i class="fas fa-clock me-3"></i> What are your opening hours?
+                        </button>
+                    </h2>
+                    <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            We are open daily from <strong>9:00 AM to 9:00 PM</strong>. Last entry is at 8:00 PM.
+                            Special hours for holidays may apply.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo">
+                            <i class="fas fa-ticket-alt me-3"></i> Can I buy tickets at the door?
+                        </button>
+                    </h2>
+                    <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, tickets are available at the counter. However, we <strong>strongly recommend</strong> 
+                            booking online to avoid queues and ensure availability.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree">
+                            <i class="fas fa-camera me-3"></i> Is photography allowed inside?
+                        </button>
+                    </h2>
+                    <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            <strong>Yes!</strong> Photography for personal use is allowed throughout the aquarium. 
+                            However, flash photography is <strong>prohibited</strong> as it disturbs the marine animals.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour">
+                            <i class="fas fa-child me-3"></i> Are there activities for children?
+                        </button>
+                    </h2>
+                    <div id="faqFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Absolutely! We have several child-friendly activities:
+                            <ul class="mt-2">
+                                <li><strong>Touch Pools:</strong> Interactive pools with starfish</li>
+                                <li><strong>Marine Crafts:</strong> Daily craft sessions</li>
+                                <li><strong>Treasure Hunt:</strong> Fun educational hunt</li>
+                                <li><strong>Kids' Zone:</strong> Play area with marine-themed games</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFive">
+                            <i class="fas fa-wheelchair me-3"></i> Is the aquarium wheelchair accessible?
+                        </button>
+                    </h2>
+                    <div id="faqFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, Marine World is fully wheelchair accessible. We provide:
+                            <ul class="mt-2">
+                                <li>Ramp access to all exhibits</li>
+                                <li>Wheelchair-friendly pathways</li>
+                                <li>Accessible restrooms on every floor</li>
+                                <li>Complimentary wheelchair service</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION (FIXED - 2 ROUND BUTTONS) -->
+<section class="py-5">
+    <div class="container text-center">
+        <!-- Animated Circle -->
+        <div class="pulse-circle mb-4">
+            <i class="fas fa-fish fa-2x"></i>
+        </div>
+        
+        <h2  style="color: black; background-color: rgb(255, 255, 255); padding: 10px; border-radius: 8px;" class="mb-3">What Are You Waiting For?</h2>
+        <p class="mb-4">The ocean's wonders are just a click away.</p>
+        
+        <!-- Two Round Buttons -->
+        <div class="cta-buttons mt-4">
+            <a href="booking.html" class="cta-round-btn cta-primary">
+                <i class="fas fa-ticket-alt fa-2x"></i>
+                <span>Book Now</span>
+            </a>
+            
+            <a href="contact.html" class="cta-round-btn cta-secondary">
+                <i class="fas fa-phone fa-2x"></i>
+                <span>Call Us</span>
+            </a>
+        </div>
+        
+        <!-- Trust Badges -->
+        <div class="trust-badges mt-5 pt-4">
+            <div class="d-flex flex-wrap justify-content-center gap-4">
+                <div class="badge-item">
+                    <i class="fas fa-award fa-2x mb-2"></i>
+                    <p class="mb-0 small">Best Aquarium 2024</p>
+                </div>
+                <div class="badge-item">
+                    <i class="fas fa-star fa-2x mb-2"></i>
+                    <p class="mb-0 small">4.8/5 Rating</p>
+                </div>
+                <div class="badge-item">
+                    <i class="fas fa-user-friends fa-2x mb-2"></i>
+                    <p class="mb-0 small">Family Friendly</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>LOCALS MARINE</h5>
+                    <p>Exploring the wonders of ocean life since 2024</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="events.html">Upcoming Events</a></li>
+                        <li><a href="booking.html">Book Tickets</a></li>
+                        <li><a href="contact.html">Visit Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Info</h5>
+                    <p><i class="fas fa-map-marker-alt"></i> Sea View Road, Karachi</p>
+                    <p><i class="fas fa-phone"></i> +92 300 1234567</p>
+                    <p><i class="fas fa-envelope"></i> info@marineworld.pk</p>
+                </div>
+            </div>
+            <hr>
+            <p class="text-center mb-0">&copy; 2024 Marine World. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
